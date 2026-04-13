@@ -15,3 +15,10 @@ function combineUsers(...arrays) {
 const combined = combineUsers(group1, group2, group3);
 
 console.log(combined);
+
+function combineUsers(...arrays) {
+  return {
+    users: arrays.flat(),
+    createdAt: new Date()
+  };
+}
