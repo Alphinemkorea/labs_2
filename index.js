@@ -1,24 +1,26 @@
-const group1 = ["John", "Mary"];
-const group2 = ["Alex", "Jane"];
-const group3 = ["Mike"];
+// index.js
 
-function combineUsers(...arrays) {
-  let result = [];
+// Import datejs (as instructed in the lab)
+const datejs = require('datejs');
 
-  for (let arr of arrays) {
-    result = result.concat(arr);
-  }
+// Task: combineUsers function
+function combineUsers(...args) {
+    // Step 2: Initialize the return object
+    const combinedObject = {
+        users: []
+    };
 
-  return result;
+    // Step 3 & 4: Loop through all arrays and merge using spread operator
+    for (let arr of args) {
+        combinedObject.users = [...combinedObject.users, ...arr];
+    }
+
+    // Step 5: Add today's date in M/d/yyyy format
+    combinedObject.merge_date = new Date().toString("M/d/yyyy");
+
+    // Step 6: Return the object
+    return combinedObject;
 }
 
-const combined = combineUsers(group1, group2, group3);
-
-console.log(combined);
-
-function combineUsers(...arrays) {
-  return {
-    users: arrays.flat(),
-    createdAt: new Date()
-  };
-}
+// Export the function (important for Jest tests)
+module.exports = { combineUsers };
