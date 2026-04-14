@@ -1,0 +1,12 @@
+{
+  "name": "js-merge-users-lab",
+  "version": "1.0.0",
+  "description": "Lab for merging user arrays with modules and syntax",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
